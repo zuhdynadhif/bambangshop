@@ -107,3 +107,15 @@ This is the place for you to write reflections:
     > Postman sangat membantu saya dalam mengelola API, terutama dalam melakukan validasi apakah suatu API sudah sesuai atau belum. Postman juga mampu menampilkan data dalam interface yang intuitif dan mudah dipahami. Fitur yang paling saya sukai adalah kemampuan untuk membuat collection dan environment yang memungkinkan saya untuk mengelola dan mengatur API yang akan diuji sesuai dengan kebutuhan tertentu.
 
 #### Reflection Publisher-3
+
+1. Observer Pattern has two variations: Push model (publisher pushes data to subscribers) and Pull model (subscribers pull data from publisher). In this tutorial case, which variation of Observer Pattern that we use?
+
+    > Kasus ini menggunakan push model. Hal ini terlihat pada penggunaan fungsi `notify`, dimana publisher memberikan notifikasi kepada subscriber yang ada pada `SubscriberRepository`. Untuk setiap subscriber yang ada, publisher akan mengirimkan notifikasi dengan melakukan pemanggilan dari method update yang ada pada Subscriber dengan payload yang sesuai. Ini merupakan mekanisme Push Model pada Observer Pattern.
+
+2. What are the advantages and disadvantages of using the other variation of Observer Pattern for this tutorial case? (example: if you answer Q1 with Push, then imagine if we used Pull)
+
+    > Keuntungan dari implementasi ini adalah pengurangan overhead dan data retrieval control yang lebih baik. Subscriber hanya akan melakukan request update ketika memang dibutuhkan. Namun, kekurangannya adalah peningkatan kompleksitas pada implementasi dikarenakan adanya kebuthkan untuk mengimplementasikan polling mechanism pada subscriber.
+
+3. Explain what will happen to the program if we decide to not use multi-threading in the notification process.
+
+    > Jika tidak digunakan, amka akan muncul blocking behavior karena notifikasi yang dikirimkan ke subscriber adalah sebuah sequencial program. Sehingga, tidak tidak mengaplikasikan multithreading, maka setiap subscriber harus mengantri. Karenanya, program tidak akan responsive dan kenyamanan pengguna akan menurun.
