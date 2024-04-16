@@ -94,5 +94,16 @@ This is the place for you to write reflections:
     > Penggunaan `Dashmap` sebagai thread-safe HashMap merupakan pilihan yang tepat karena memungkinkan untuk mengakses data secara aman dari thread tanpa harus melakukan setup secara manual. Hal ini jauh lebih menguntungkan dibandingkan dengan penggunaaan Singleton pattern yang memerlukan implementasi manual untuk memastikan thread-safety.
 
 #### Reflection Publisher-2
+1. In the Model-View Controller (MVC) compound pattern, there is no “Service” and “Repository”. Model in MVC covers both data storage and business logic. Explain based on your understanding of design principles, why we need to separate “Service” and “Repository” from a Model?
+
+    > Pemisahan antara business logic dan juga data storage ditujukan untuk menerapkan separation of concerns, dimana setiap komponen memiliki tanggung jawab yang jelas dan terpisah. Dengan pemisahan ini, kode akan meningkatkan maintainability dari aplikasi.
+
+2. What happens if we only use the Model? Explain your imagination on how the interactions between each model (Program, Subscriber, Notification) affect the code complexity for each model?
+
+    > Jika kita hanya menggunakan model saja tanpa ada pemisahan business logic dan juga data storage akan menyebabkan tingginya kompleksitas program dan juga membuat adanya coupling antar model. Kompleksitas akan meningkat karena dalam satu blok kode, harus mengandung business logic dan instance repository. Hal ini akan menyulitkan pengembangan dan proses maintenance dari program karena kode yang tidak terstruktur dan berserakan.
+
+3. Have you explored more about Postman? Tell us how this tool helps you to test your current work. You might want to also list which features in Postman you are interested in or feel like it is helpful to help your Group Project or any of your future software engineering projects.
+
+    > Postman sangat membantu saya dalam mengelola API, terutama dalam melakukan validasi apakah suatu API sudah sesuai atau belum. Postman juga mampu menampilkan data dalam interface yang intuitif dan mudah dipahami. Fitur yang paling saya sukai adalah kemampuan untuk membuat collection dan environment yang memungkinkan saya untuk mengelola dan mengatur API yang akan diuji sesuai dengan kebutuhan tertentu.
 
 #### Reflection Publisher-3
